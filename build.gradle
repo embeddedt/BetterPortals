@@ -73,7 +73,7 @@ dependencies {
     deobfProvided("curse.maven:mekanism-268560:2755008")
     deobfProvided("curse.maven:redstoneflux-270789:2920436")
     deobfProvided("curse.maven:industrialcraft-242638:2669614")
-    deobfCompile("curse.maven:aether-255308:3280119")
+    deobfProvided("curse.maven:aether-255308:3280119")
     deobfProvided("curse.maven:travelhuts-255576:2629517")
     deobfProvided("curse.maven:abyssalcraft-53686:2760360")
 }
