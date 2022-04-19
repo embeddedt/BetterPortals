@@ -1,6 +1,6 @@
 package de.johni0702.minecraft.betterportals.impl.aether.common
 
-import com.legacy.aether.blocks.BlocksAether
+import com.gildedgames.the_aether.blocks.BlocksAether
 import de.johni0702.minecraft.betterportals.client.render.FramedPortalRenderer
 import de.johni0702.minecraft.betterportals.client.render.RenderPortalEntity
 import de.johni0702.minecraft.betterportals.common.PortalConfiguration

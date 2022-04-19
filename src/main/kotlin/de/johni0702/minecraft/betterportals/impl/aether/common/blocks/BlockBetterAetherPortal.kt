@@ -1,8 +1,8 @@
 package de.johni0702.minecraft.betterportals.impl.aether.common.blocks
 
-import com.legacy.aether.Aether
-import com.legacy.aether.AetherConfig
-import com.legacy.aether.blocks.portal.BlockAetherPortal
+import com.gildedgames.the_aether.Aether
+import com.gildedgames.the_aether.AetherConfig
+import com.gildedgames.the_aether.blocks.portal.BlockAetherPortal
 import de.johni0702.minecraft.betterportals.common.BlockCache
 import de.johni0702.minecraft.betterportals.common.FinitePortal
 import de.johni0702.minecraft.betterportals.common.block.PortalBlock
