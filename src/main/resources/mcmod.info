@@ -4,15 +4,15 @@
   "name": "Better Portals",
   "description": "Adds see-through portals that can be used without any pesky loading screen.",
   "version": "${version}",
-  "mcversion": "${mcversion}",
+  "mcversion": "1.12.2",
   "url": "",
   "updateUrl": "",
   "authorList": ["johni0702"],
   "credits": "",
   "logoFile": "",
   "screenshots": [],
-  "requiredMods": ["forgelin"],
-  "dependencies": ["forgelin"],
+  "requiredMods": ["forgelin","mixinbooter"],
+  "dependencies": ["forgelin","mixinbooter"],
   "useDependencyInformation": true
 }
 ]

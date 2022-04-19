@@ -21,7 +21,7 @@ apply plugin: "net.minecraftforge.gradle.forge"
 apply plugin: 'org.spongepowered.mixin'
 
 group = 'de.johni0702.minecraft'
-version = '0.1.0'
+version = determineVersion()
 archivesBaseName = 'betterportals'
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
@@ -98,5 +98,32 @@ processResources {
     // copy everything else, thats not the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         exclude "mcmod.info"
+    }
+}
+
+List<String> command(String... cmd) {
+    def stdout = new ByteArrayOutputStream()
+    exec {
+        commandLine(*cmd)
+        standardOutput = stdout
+    }
+    return new BufferedReader(new StringReader(stdout.toString())).lines().collect()
+}
+
+def determineVersion() {
+    def latestVersion = file("version.txt").readLines().first()
+    def releaseCommit = command("git", "blame", "-p", "-l", "version.txt").first().split(" ").first()
+    def currentCommit = command("git", "rev-parse", "HEAD").first()
+    def version
+    if (releaseCommit == currentCommit) {
+        version = latestVersion
+    } else {
+        def diff = command("git", "log", "--format=oneline", "$releaseCommit..$currentCommit").size
+        version = "$latestVersion-$diff-g${currentCommit.substring(0, 7)}"
+    }
+    if (command("git", "status", "--porcelain").any { !it.isEmpty() }) {
+        return "$version*"
+    } else {
+        return version
     }
 }
