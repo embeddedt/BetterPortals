@@ -102,6 +102,16 @@ processResources {
     }
 }
 
+jar {
+    manifest {
+        attributes "FMLCorePlugin": "de.johni0702.minecraft.betterportals.impl.MixinLoader"
+        attributes "FMLCorePluginContainsFMLMod": "true"
+        attributes "ForceLoadAsMod": "true"
+        attributes "FMLAT": "betterportals_at.cfg"
+    }
+}
+
+
 List<String> command(String... cmd) {
     def stdout = new ByteArrayOutputStream()
     exec {
